@@ -1,0 +1,18 @@
+{
+  "name": "sebas-cocina-threejs-pbr",
+  "version": "1.0.0",
+  "description": "Visor 3D interactivo en Three.js para sebasCocina.skp con Melaminas HD y relieve PBR, habitación fondo greige, piso Calacatta 120x60 e iluminación 5500K.",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve ."
+  },
+  "keywords": [
+    "threejs",
+    "sketchup",
+    "pbr",
+    "melaminas",
+    "enssamble",
+    "3d-viewer"
+  ],
+  "license": "MIT"
+}

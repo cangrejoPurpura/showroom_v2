@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>sebasCocina 3D · Visor Interactivo Three.js PBR (Enssamble Melaminas)</title>
+  <link rel="stylesheet" href="./css/styles.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+
+  <!-- Contenedor WebGL Three.js -->
+  <div id="canvas-container" title="Rueda arriba/abajo: Zoom | Presionar ruedita y arrastrar: Giro 360° | WASD / Flechas: Caminar"></div>
+
+  <!-- Capa de Puntos Concéntricos para cada elemento que se abre -->
+  <div id="hotspots-layer"></div>
+
+  <!-- Indicador superior izquierdo -->
+  <div id="toast-status">
+    <span class="status-dot"></span>
+    <span id="status-text"><strong>sebasCocina.skp</strong> · Luz 5500K · Piso Calacatta 120×60 · Fondo Greige</span>
+  </div>
+
+  <!-- Botón de Engranaje en la Esquina para Activar/Desactivar la GUI -->
+  <button id="btn-gear-toggle" class="active" type="button" aria-label="Mostrar u ocultar controles GUI" title="Activar / Desactivar GUI">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="3"></circle>
+      <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+    </svg>
+  </button>
+
+  <!-- Panel GUI Principal -->
+  <aside id="gui-panel">
+    <div class="gui-header">
+      <span class="gui-title">Configurador Bajo Mesada</span>
+      <span class="gui-badge">PBR HD 1536×3310</span>
+    </div>
+
+    <!-- Sección 1: Apertura de Puertas y Cajones -->
+    <div class="gui-section">
+      <div class="gui-section-title">
+        <span>Apertura de Elementos (5)</span>
+        <label style="font-size:10.5px; color:#d1d5db; text-transform:none; cursor:pointer; display:flex; align-items:center; gap:4px;">
+          <input type="checkbox" id="chk-show-hotspots" checked /> Puntos
+        </label>
+      </div>
+      <div id="openables-controls-list"></div>
+      <div class="gui-btn-grid">
+        <button type="button" class="gui-btn" id="btn-open-all">Abrir Todo</button>
+        <button type="button" class="gui-btn" id="btn-close-all">Cerrar Todo</button>
+      </div>
+    </div>
+
+    <!-- Sección 2: Acabados Melaminas Enssamble HD + Relieve -->
+    <div class="gui-section">
+      <div class="gui-section-title">Melaminas HD y Relieve PBR</div>
+      <div class="gui-row"><label for="sel-mat-frente">Frentes (Puertas y Cajones)</label></div>
+      <select id="sel-mat-frente" class="gui-select">
+        <option value="012_Camellia" selected>012 Camellia (FAPLAC Blend - Original SKP)</option>
+        <option value="031_Roble_Halifax_natural">031 Roble Halifax natural (EGGER ST37)</option>
+        <option value="004_Pino_Aland_polar">004 Pino Aland polar (EGGER ST22)</option>
+        <option value="001_Blanco_Nature">001 Blanco Nature (FAPLAC Nature)</option>
+        <option value="126_Lino_Blanco">126 Lino Blanco (FAPLAC Hilados)</option>
+        <option value="064_Sauco">064 Sauco (FAPLAC Blend)</option>
+        <option value="151_Metal_cepillado_oro">151 Metal cepillado oro (EGGER ST20)</option>
+      </select>
+
+      <div class="gui-row"><label for="sel-mat-mesada">Mesada Superior</label></div>
+      <select id="sel-mat-mesada" class="gui-select">
+        <option value="148_Amberes" selected>148 Amberes (FAPLAC Urban - Original SKP)</option>
+        <option value="139_Travertino">139 Travertino (FAPLAC Imperial)</option>
+        <option value="073_Blanco">073 Blanco Cuarzo (W954)</option>
+        <option value="031_Roble_Halifax_natural">031 Roble Halifax Macizo</option>
+      </select>
+
+      <div class="gui-row"><label for="sel-mat-estructura">Estructura / Casco Interior</label></div>
+      <select id="sel-mat-estructura" class="gui-select">
+        <option value="064_Sauco" selected>064 Sauco Antracita (212BAR - Original SKP)</option>
+        <option value="073_Blanco">073 Blanco (EGGER W954)</option>
+        <option value="012_Camellia">012 Camellia (FAPLAC Blend)</option>
+        <option value="126_Lino_Blanco">126 Lino Blanco (Textil)</option>
+      </select>
+
+      <div class="gui-row">
+        <label for="rng-normal-scale">Profundidad de Relieve PBR</label>
+        <input type="range" id="rng-normal-scale" class="gui-slider" min="0" max="2.5" step="0.05" value="1.15" />
+      </div>
+    </div>
+
+    <!-- Sección 3: Iluminación 5500K + Spots Bajo Mesada -->
+    <div class="gui-section">
+      <div class="gui-section-title">Iluminación 5500K y Bajo Mesada</div>
+      <div class="gui-row">
+        <label for="rng-amb-5500k">Ambiente Neutra 5500K</label>
+        <input type="range" id="rng-amb-5500k" class="gui-slider" min="0.1" max="2.0" step="0.05" value="0.95" />
+      </div>
+      <div class="gui-row">
+        <label for="rng-spots-bm">Luces sobre Bajo Mesada</label>
+        <input type="range" id="rng-spots-bm" class="gui-slider" min="0.0" max="2.8" step="0.05" value="1.45" />
+      </div>
+      <div class="gui-row">
+        <label for="rng-walk-speed">Velocidad Caminata (WASD)</label>
+        <input type="range" id="rng-walk-speed" class="gui-slider" min="0.8" max="4.5" step="0.1" value="2.2" />
+      </div>
+    </div>
+
+    <!-- Sección 4: Cámaras y Zoom de Inspección -->
+    <div class="gui-section">
+      <div class="gui-section-title">Vistas Rápidas y Zoom Textura</div>
+      <div class="gui-btn-grid">
+        <button type="button" class="gui-btn" id="btn-cam-front">Vista General</button>
+        <button type="button" class="gui-btn" id="btn-cam-zoom-door">Zoom Veta Camellia</button>
+        <button type="button" class="gui-btn" id="btn-cam-zoom-mesada">Zoom Mesada Amberes</button>
+        <button type="button" class="gui-btn" id="btn-cam-floor">Ver Piso Calacatta</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Barra HUD Inferior con guía de navegación -->
+  <div id="hud-controls-bar">
+    <span><span class="hud-key">W</span><span class="hud-key">A</span><span class="hud-key">S</span><span class="hud-key">D</span> o <span class="hud-key">▲</span><span class="hud-key">◄</span><span class="hud-key">▼</span><span class="hud-key">►</span> Caminar</span>
+    <span class="hud-sep">|</span>
+    <span><span class="hud-key">Presionar Ruedita Mouse</span> Giro 360°</span>
+    <span class="hud-sep">|</span>
+    <span><span class="hud-key">Ruedita ↑/↓</span> Zoom</span>
+    <span class="hud-sep">|</span>
+    <span><span class="hud-key">Clic en Puntos ◎</span> Abrir / Cerrar</span>
+  </div>
+
+  <script src="./js/scene_data.js"></script>
+  <script src="./js/app.js"></script>
+</body>
+</html>
