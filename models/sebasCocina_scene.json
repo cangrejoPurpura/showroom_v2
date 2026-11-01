@@ -1,0 +1,955 @@
+{
+  "model_name": "sebasCocina.skp",
+  "dimensions_m": {
+    "width": 1.906,
+    "height": 0.9,
+    "depth": 0.6
+  },
+  "openables": [
+    {
+      "id": "puerta_izq",
+      "label": "Puerta Izquierda",
+      "subtitle": "Módulo Bajo Mesada Izquierdo (Apertura 100°)",
+      "type": "door",
+      "hinge_pivot": [
+        -0.95,
+        0.484,
+        0.563
+      ],
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "max_angle_deg": -100.0,
+      "hotspot_local": [
+        0.38,
+        0.28,
+        0.022
+      ]
+    },
+    {
+      "id": "cajon_sup",
+      "label": "Cajón Superior",
+      "subtitle": "Cajón Cubiertero (Corredera Telescópica 350 mm)",
+      "type": "drawer",
+      "hinge_pivot": [
+        -0.289,
+        0.775,
+        0.581
+      ],
+      "slide_vec": [
+        0.0,
+        0.0,
+        0.35
+      ],
+      "hotspot_local": [
+        0.0,
+        0.0,
+        0.015
+      ]
+    },
+    {
+      "id": "cajon_med",
+      "label": "Cajón Intermedio",
+      "subtitle": "Cajón Utensilios (Corredera Telescópica 350 mm)",
+      "type": "drawer",
+      "hinge_pivot": [
+        -0.289,
+        0.581,
+        0.581
+      ],
+      "slide_vec": [
+        0.0,
+        0.0,
+        0.35
+      ],
+      "hotspot_local": [
+        0.0,
+        0.0,
+        0.015
+      ]
+    },
+    {
+      "id": "cajon_inf",
+      "label": "Cajón Olla Inferior",
+      "subtitle": "Cajón Profundo Ollas (Corredera Telescópica 350 mm)",
+      "type": "drawer",
+      "hinge_pivot": [
+        -0.289,
+        0.29,
+        0.581
+      ],
+      "slide_vec": [
+        0.0,
+        0.0,
+        0.35
+      ],
+      "hotspot_local": [
+        0.0,
+        0.05,
+        0.015
+      ]
+    },
+    {
+      "id": "puerta_der",
+      "label": "Puerta Derecha",
+      "subtitle": "Módulo Esquinero Derecho (Apertura 100°)",
+      "type": "door",
+      "hinge_pivot": [
+        0.371,
+        0.484,
+        0.563
+      ],
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "max_angle_deg": 100.0,
+      "hotspot_local": [
+        -0.38,
+        0.28,
+        0.022
+      ]
+    }
+  ],
+  "pieces": [
+    {
+      "id": "piece_00",
+      "name": "Puerta Izquierda (BM-Puerta)",
+      "skp_def": "BM-Puerta",
+      "role": "frente",
+      "mat_slot": "frente",
+      "uv_rot": 0,
+      "anim_group": "puerta_izq",
+      "bbox": [
+        -0.95,
+        0.098,
+        0.563,
+        -0.511,
+        0.87,
+        0.581
+      ],
+      "dims_mm": [
+        439.0,
+        772.0,
+        18.0
+      ]
+    },
+    {
+      "id": "piece_01",
+      "name": "Puerta Central-Derecha (BM-Puerta#1)",
+      "skp_def": "BM-Puerta#1",
+      "role": "frente",
+      "mat_slot": "frente",
+      "uv_rot": 0,
+      "anim_group": "puerta_der",
+      "bbox": [
+        -0.068,
+        0.098,
+        0.563,
+        0.371,
+        0.87,
+        0.581
+      ],
+      "dims_mm": [
+        439.0,
+        772.0,
+        18.0
+      ]
+    },
+    {
+      "id": "piece_02",
+      "name": "Frente Cajón Superior (BM-3CAJ-Puerta)",
+      "skp_def": "BM-3CAJ-Puerta",
+      "role": "frente",
+      "mat_slot": "frente",
+      "uv_rot": 90,
+      "anim_group": "cajon_sup",
+      "bbox": [
+        -0.509,
+        0.68,
+        0.563,
+        -0.07,
+        0.87,
+        0.581
+      ],
+      "dims_mm": [
+        439.0,
+        190.0,
+        18.0
+      ]
+    },
+    {
+      "id": "piece_03",
+      "name": "Interior Cajón Superior - BM-3CAJ-Frente",
+      "skp_def": "Grupo#8",
+      "role": "cajon_interior",
+      "mat_slot": "cajon_interior",
+      "uv_rot": 0,
+      "anim_group": "cajon_sup",
+      "bbox": [
+        -0.46,
+        0.71,
+        0.545,
+        -0.119,
+        0.81,
+        0.563
+      ],
+      "dims_mm": [
+        341.0,
+        100.0,
+        18.0
+      ]
+    },
+    {
+      "id": "piece_04",
+      "name": "Interior Cajón Superior - BM-3CAJ-Lat",
+      "skp_def": "Grupo#109",
+      "role": "cajon_interior",
+      "mat_slot": "cajon_interior",
+      "uv_rot": 0,
+      "anim_group": "cajon_sup",
+      "bbox": [
+        -0.119,
+        0.71,
+        0.063,
+        -0.101,
+        0.81,
+        0.563
+      ],
+      "dims_mm": [
+        18.0,
+        100.0,
+        500.0
+      ]
+    },
+    {
+      "id": "piece_05",
+      "name": "Interior Cajón Superior - BM-3CAJ-Lat",
+      "skp_def": "Grupo#103",
+      "role": "cajon_interior",
+      "mat_slot": "cajon_interior",
+      "uv_rot": 0,
+      "anim_group": "cajon_sup",
+      "bbox": [
+        -0.478,
+        0.71,
+        0.063,
+        -0.46,
+        0.81,
+        0.563
+      ],
+      "dims_mm": [
+        18.0,
+        100.0,
+        500.0
+      ]
+    },
+    {
+      "id": "piece_06",
+      "name": "Interior Cajón Superior - BM-3CAJ-Frente",
+      "skp_def": "Grupo#105",
+      "role": "cajon_interior",
+      "mat_slot": "cajon_interior",
+      "uv_rot": 0,
+      "anim_group": "cajon_sup",
+      "bbox": [
+        -0.46,
+        0.71,
+        0.063,
+        -0.119,
+        0.81,
+        0.081
+      ],
+      "dims_mm": [
+        341.0,
+        100.0,
+        18.0
+      ]
+    },
+    {
+      "id": "piece_07",
+      "name": "Interior Cajón Superior - BM-FondoCAJ",
+      "skp_def": "Grupo#110",
+      "role": "cajon_interior",
+      "mat_slot": "cajon_interior",
+      "uv_rot": 0,
+      "anim_group": "cajon_sup",
+      "bbox": [
+        -0.475,
+        0.707,
+        0.066,
+        -0.103,
+        0.71,
+        0.561
+      ],
+      "dims_mm": [
+        372.0,
+        3.0,
+        495.0
+      ]
+    },
+    {
+      "id": "piece_08",
+      "name": "Frente Cajón Intermedio (BM-2CAJ-Puerta)",
+      "skp_def": "BM-2CAJ-Puerta",
+      "role": "frente",
+      "mat_slot": "frente",
+      "uv_rot": 90,
+      "anim_group": "cajon_med",
+      "bbox": [
+        -0.509,
+        0.486,
+        0.563,
+        -0.07,
+        0.677,
+        0.581
+      ],
+      "dims_mm": [
+        439.0,
+        191.0,
+        18.0
+      ]
+    },
+    {
+      "id": "piece_09",
+      "name": "Interior Cajón Intermedio - BM-FondoCAJ",
+      "skp_def": "Grupo#9",
+      "role": "cajon_interior",
+      "mat_slot": "cajon_interior",
+      "uv_rot": 0,
+      "anim_group": "cajon_med",
+      "bbox": [
+        -0.475,
+        0.493,
+        0.066,
+        -0.103,
+        0.496,
+        0.561
+      ],
+      "dims_mm": [
+        372.0,
+        3.0,
+        495.0
+      ]
+    },
+    {
+      "id": "piece_10",
+      "name": "Interior Cajón Intermedio - BM-2CAJ-Lat",
+      "skp_def": "Grupo#4",
+      "role": "cajon_interior",
+      "mat_slot": "cajon_interior",
+      "uv_rot": 0,
+      "anim_group": "cajon_med",
+      "bbox": [
+        -0.119,
+        0.496,
+        0.063,
+        -0.101,
+        0.662,
+        0.563
+      ],
+      "dims_mm": [
+        18.0,
+        166.0,
+        500.0
+      ]
+    },
+    {
+      "id": "piece_11",
+      "name": "Interior Cajón Intermedio - BM-2CAJ-Frente",
+      "skp_def": "Grupo#5",
+      "role": "cajon_interior",
+      "mat_slot": "cajon_interior",
+      "uv_rot": 0,
+      "anim_group": "cajon_med",
+      "bbox": [
+        -0.46,
+        0.496,
+        0.063,
+        -0.119,
+        0.662,
+        0.081
+      ],
+      "dims_mm": [
+        341.0,
+        166.0,
+        18.0
+      ]
+    },
+    {
+      "id": "piece_12",
+      "name": "Interior Cajón Intermedio - BM-2CAJ-Frente",
+      "skp_def": "Grupo#6",
+      "role": "cajon_interior",
+      "mat_slot": "cajon_interior",
+      "uv_rot": 0,
+      "anim_group": "cajon_med",
+      "bbox": [
+        -0.46,
+        0.496,
+        0.545,
+        -0.119,
+        0.662,
+        0.563
+      ],
+      "dims_mm": [
+        341.0,
+        166.0,
+        18.0
+      ]
+    },
+    {
+      "id": "piece_13",
+      "name": "Interior Cajón Intermedio - BM-2CAJ-Lat",
+      "skp_def": "Grupo#7",
+      "role": "cajon_interior",
+      "mat_slot": "cajon_interior",
+      "uv_rot": 0,
+      "anim_group": "cajon_med",
+      "bbox": [
+        -0.478,
+        0.496,
+        0.063,
+        -0.46,
+        0.662,
+        0.563
+      ],
+      "dims_mm": [
+        18.0,
+        166.0,
+        500.0
+      ]
+    },
+    {
+      "id": "piece_14",
+      "name": "Frente Cajón Inferior Olla (BM-1CAJ-Puerta)",
+      "skp_def": "BM-1CAJ-Puerta",
+      "role": "frente",
+      "mat_slot": "frente",
+      "uv_rot": 90,
+      "anim_group": "cajon_inf",
+      "bbox": [
+        -0.509,
+        0.098,
+        0.563,
+        -0.07,
+        0.483,
+        0.581
+      ],
+      "dims_mm": [
+        439.0,
+        385.0,
+        18.0
+      ]
+    },
+    {
+      "id": "piece_15",
+      "name": "Interior Cajón Inferior Olla - BM-1CAJ-Lat",
+      "skp_def": "Grupo#106",
+      "role": "cajon_interior",
+      "mat_slot": "cajon_interior",
+      "uv_rot": 0,
+      "anim_group": "cajon_inf",
+      "bbox": [
+        -0.478,
+        0.133,
+        0.063,
+        -0.46,
+        0.423,
+        0.563
+      ],
+      "dims_mm": [
+        18.0,
+        290.0,
+        500.0
+      ]
+    },
+    {
+      "id": "piece_16",
+      "name": "Interior Cajón Inferior Olla - BM-1CAJ-Frente",
+      "skp_def": "Grupo#108",
+      "role": "cajon_interior",
+      "mat_slot": "cajon_interior",
+      "uv_rot": 0,
+      "anim_group": "cajon_inf",
+      "bbox": [
+        -0.46,
+        0.133,
+        0.063,
+        -0.119,
+        0.423,
+        0.081
+      ],
+      "dims_mm": [
+        341.0,
+        290.0,
+        18.0
+      ]
+    },
+    {
+      "id": "piece_17",
+      "name": "Interior Cajón Inferior Olla - BM-1CAJ-Lat",
+      "skp_def": "Grupo#107",
+      "role": "cajon_interior",
+      "mat_slot": "cajon_interior",
+      "uv_rot": 0,
+      "anim_group": "cajon_inf",
+      "bbox": [
+        -0.119,
+        0.133,
+        0.063,
+        -0.101,
+        0.423,
+        0.563
+      ],
+      "dims_mm": [
+        18.0,
+        290.0,
+        500.0
+      ]
+    },
+    {
+      "id": "piece_18",
+      "name": "Interior Cajón Inferior Olla - BM-1CAJ-Frente",
+      "skp_def": "Grupo#104",
+      "role": "cajon_interior",
+      "mat_slot": "cajon_interior",
+      "uv_rot": 0,
+      "anim_group": "cajon_inf",
+      "bbox": [
+        -0.46,
+        0.133,
+        0.545,
+        -0.119,
+        0.423,
+        0.563
+      ],
+      "dims_mm": [
+        341.0,
+        290.0,
+        18.0
+      ]
+    },
+    {
+      "id": "piece_19",
+      "name": "Interior Cajón Inferior Olla - BM-FondoCAJ",
+      "skp_def": "Grupo#3",
+      "role": "cajon_interior",
+      "mat_slot": "cajon_interior",
+      "uv_rot": 0,
+      "anim_group": "cajon_inf",
+      "bbox": [
+        -0.476,
+        0.13,
+        0.066,
+        -0.104,
+        0.133,
+        0.561
+      ],
+      "dims_mm": [
+        372.0,
+        3.0,
+        495.0
+      ]
+    },
+    {
+      "id": "piece_20",
+      "name": "BM-Lat",
+      "skp_def": "Grupo#79",
+      "role": "estructura",
+      "mat_slot": "estructura",
+      "uv_rot": 0,
+      "anim_group": null,
+      "bbox": [
+        -0.528,
+        0.113,
+        0.005,
+        -0.51,
+        0.88,
+        0.563
+      ],
+      "dims_mm": [
+        18.0,
+        767.0,
+        558.0
+      ]
+    },
+    {
+      "id": "piece_21",
+      "name": "BM-Lat",
+      "skp_def": "Grupo#155",
+      "role": "estructura",
+      "mat_slot": "estructura",
+      "uv_rot": 0,
+      "anim_group": null,
+      "bbox": [
+        -0.51,
+        0.113,
+        0.005,
+        -0.492,
+        0.88,
+        0.563
+      ],
+      "dims_mm": [
+        18.0,
+        767.0,
+        558.0
+      ]
+    },
+    {
+      "id": "piece_22",
+      "name": "BM-1Base",
+      "skp_def": "Grupo#93",
+      "role": "estructura",
+      "mat_slot": "estructura",
+      "uv_rot": 0,
+      "anim_group": null,
+      "bbox": [
+        -0.069,
+        0.095,
+        0.005,
+        0.947,
+        0.113,
+        0.563
+      ],
+      "dims_mm": [
+        1016.0,
+        18.0,
+        558.0
+      ]
+    },
+    {
+      "id": "piece_23",
+      "name": "Mesada Superior (058DMT Amberes)",
+      "skp_def": "Grupo#73",
+      "role": "mesada",
+      "mat_slot": "mesada",
+      "uv_rot": 0,
+      "anim_group": null,
+      "bbox": [
+        -0.953,
+        0.88,
+        0.0,
+        0.953,
+        0.9,
+        0.6
+      ],
+      "dims_mm": [
+        1906.0,
+        20.0,
+        600.0
+      ]
+    },
+    {
+      "id": "piece_24",
+      "name": "BM-CAJ-Faja",
+      "skp_def": "Grupo#98",
+      "role": "estructura",
+      "mat_slot": "estructura",
+      "uv_rot": 0,
+      "anim_group": null,
+      "bbox": [
+        -0.492,
+        0.8,
+        0.005,
+        -0.087,
+        0.88,
+        0.023
+      ],
+      "dims_mm": [
+        405.0,
+        80.0,
+        18.0
+      ]
+    },
+    {
+      "id": "piece_25",
+      "name": "BM-1FajaFrontal",
+      "skp_def": "Grupo#95",
+      "role": "estructura",
+      "mat_slot": "estructura",
+      "uv_rot": 0,
+      "anim_group": null,
+      "bbox": [
+        -0.935,
+        0.82,
+        0.545,
+        0.3618,
+        0.88,
+        0.563
+      ],
+      "dims_mm": [
+        1296.8,
+        60.0,
+        18.0
+      ]
+    },
+    {
+      "id": "piece_26",
+      "name": "BM-2-Estante",
+      "skp_def": "Grupo#114",
+      "role": "estructura",
+      "mat_slot": "estructura",
+      "uv_rot": 0,
+      "anim_group": null,
+      "bbox": [
+        -0.934,
+        0.474,
+        0.005,
+        -0.528,
+        0.492,
+        0.548
+      ],
+      "dims_mm": [
+        406.0,
+        18.0,
+        543.0
+      ]
+    },
+    {
+      "id": "piece_27",
+      "name": "BM-Lat",
+      "skp_def": "Grupo#156",
+      "role": "estructura",
+      "mat_slot": "estructura",
+      "uv_rot": 0,
+      "anim_group": null,
+      "bbox": [
+        -0.087,
+        0.113,
+        0.005,
+        -0.069,
+        0.88,
+        0.563
+      ],
+      "dims_mm": [
+        18.0,
+        767.0,
+        558.0
+      ]
+    },
+    {
+      "id": "piece_28",
+      "name": "BM-Lat",
+      "skp_def": "Grupo#2",
+      "role": "estructura",
+      "mat_slot": "estructura",
+      "uv_rot": 0,
+      "anim_group": null,
+      "bbox": [
+        0.929,
+        0.113,
+        0.005,
+        0.947,
+        0.88,
+        0.563
+      ],
+      "dims_mm": [
+        18.0,
+        767.0,
+        558.0
+      ]
+    },
+    {
+      "id": "piece_29",
+      "name": "BM-CJ-Base",
+      "skp_def": "Grupo#94",
+      "role": "estructura",
+      "mat_slot": "estructura",
+      "uv_rot": 0,
+      "anim_group": null,
+      "bbox": [
+        -0.51,
+        0.095,
+        0.005,
+        -0.069,
+        0.113,
+        0.563
+      ],
+      "dims_mm": [
+        441.0,
+        18.0,
+        558.0
+      ]
+    },
+    {
+      "id": "piece_30",
+      "name": "Paño Fijo / Puerta Ciega (BM-PuertaCiega)",
+      "skp_def": "Grupo#86",
+      "role": "frente",
+      "mat_slot": "frente",
+      "uv_rot": 0,
+      "anim_group": null,
+      "bbox": [
+        0.3618,
+        0.113,
+        0.545,
+        0.929,
+        0.88,
+        0.563
+      ],
+      "dims_mm": [
+        567.2,
+        767.0,
+        18.0
+      ]
+    },
+    {
+      "id": "piece_31",
+      "name": "BM-Lat",
+      "skp_def": "Grupo#157",
+      "role": "estructura",
+      "mat_slot": "estructura",
+      "uv_rot": 0,
+      "anim_group": null,
+      "bbox": [
+        -0.069,
+        0.113,
+        0.005,
+        -0.051,
+        0.88,
+        0.563
+      ],
+      "dims_mm": [
+        18.0,
+        767.0,
+        558.0
+      ]
+    },
+    {
+      "id": "piece_32",
+      "name": "BM-2Faja",
+      "skp_def": "Grupo#97",
+      "role": "estructura",
+      "mat_slot": "estructura",
+      "uv_rot": 0,
+      "anim_group": null,
+      "bbox": [
+        -0.935,
+        0.8,
+        0.005,
+        -0.528,
+        0.88,
+        0.023
+      ],
+      "dims_mm": [
+        407.0,
+        80.0,
+        18.0
+      ]
+    },
+    {
+      "id": "piece_33",
+      "name": "BM-2-Faja",
+      "skp_def": "Grupo#96",
+      "role": "estructura",
+      "mat_slot": "estructura",
+      "uv_rot": 0,
+      "anim_group": null,
+      "bbox": [
+        -0.051,
+        0.8,
+        0.005,
+        0.929,
+        0.88,
+        0.023
+      ],
+      "dims_mm": [
+        980.0,
+        80.0,
+        18.0
+      ]
+    },
+    {
+      "id": "piece_34",
+      "name": "Zócalo Inferior (Banquina)",
+      "skp_def": "Grupo#74",
+      "role": "zocalo",
+      "mat_slot": "zocalo",
+      "uv_rot": 0,
+      "anim_group": null,
+      "bbox": [
+        -0.953,
+        0.0,
+        0.0,
+        0.953,
+        0.095,
+        0.53
+      ],
+      "dims_mm": [
+        1906.0,
+        95.0,
+        530.0
+      ]
+    },
+    {
+      "id": "piece_35",
+      "name": "BM-Lat",
+      "skp_def": "Grupo#158",
+      "role": "estructura",
+      "mat_slot": "estructura",
+      "uv_rot": 0,
+      "anim_group": null,
+      "bbox": [
+        -0.953,
+        0.113,
+        0.005,
+        -0.935,
+        0.88,
+        0.563
+      ],
+      "dims_mm": [
+        18.0,
+        767.0,
+        558.0
+      ]
+    },
+    {
+      "id": "piece_36",
+      "name": "BM-1Estante",
+      "skp_def": "Grupo#99",
+      "role": "estructura",
+      "mat_slot": "estructura",
+      "uv_rot": 0,
+      "anim_group": null,
+      "bbox": [
+        -0.051,
+        0.474,
+        0.005,
+        0.929,
+        0.492,
+        0.545
+      ],
+      "dims_mm": [
+        980.0,
+        18.0,
+        540.0
+      ]
+    },
+    {
+      "id": "piece_37",
+      "name": "BM-2-Base",
+      "skp_def": "Grupo#80",
+      "role": "estructura",
+      "mat_slot": "estructura",
+      "uv_rot": 0,
+      "anim_group": null,
+      "bbox": [
+        -0.953,
+        0.095,
+        0.005,
+        -0.51,
+        0.113,
+        0.563
+      ],
+      "dims_mm": [
+        443.0,
+        18.0,
+        558.0
+      ]
+    }
+  ]
+}
